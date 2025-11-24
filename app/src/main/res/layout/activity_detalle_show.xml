@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp"
+    tools:context=".ui.activities.DetalleShowActivity"
+    android:background="@color/maroon">
+
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:layout_gravity="center">
+
+        <ImageView
+            android:id="@+id/imgDetalle"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:scaleType="centerCrop"
+            android:src="@drawable/ic_launcher_foreground"
+            android:layout_marginBottom="20dp" />
+
+        <TextView
+            android:id="@+id/txtDetalleArtist"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Nombre del artista"
+            android:textSize="22sp"
+            android:textStyle="bold"
+            android:textColor="@color/white"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/txtDetalleFecha"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha del show"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginBottom="12dp" />
+
+        <TextView
+            android:id="@+id/txtDetalleLugar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Lugar del show"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:layout_marginBottom="20dp" />
+
+        <Button
+            android:id="@+id/btnComprar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Comprar entrada" />
+
+    </LinearLayout>
+
+</ScrollView>
