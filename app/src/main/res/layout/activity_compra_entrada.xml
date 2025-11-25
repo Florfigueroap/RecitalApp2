@@ -12,10 +12,13 @@
 
         <TextView
             android:id="@+id/tvCompraTitulo"
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:textAlignment="center"
+            android:background="@color/maroon"
             android:text="Artista"
-            android:textSize="20sp"
+            android:textColor="@color/white"
+            android:textSize="30sp"
             android:textStyle="bold"/>
 
         <TextView
@@ -41,6 +44,7 @@
 
         <Spinner
             android:id="@+id/spSector"
+            android:background="@color/pink_translucent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
@@ -54,6 +58,7 @@
         <EditText
             android:id="@+id/etCantidad"
             android:layout_width="match_parent"
+            android:background="@color/pink_translucent"
             android:layout_height="wrap_content"
             android:inputType="number" />
 
@@ -66,6 +71,7 @@
 
         <Spinner
             android:id="@+id/spMetodoPago"
+            android:background="@color/pink_translucent"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
 
