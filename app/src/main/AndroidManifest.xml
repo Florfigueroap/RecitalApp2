@@ -11,6 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.RecitalApp2">
+        <activity android:name=".ui.activities.HistorialTickets" />
+        <activity android:name=".ui.activities.PerfilUser" />
+        <activity android:name=".ui.activities.LoginActivity"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+                 </activity>
+        <activity android:name=".ui.activities.RegisterActivity" />
+        <activity android:name=".ui.activities.ComprarShowActivity" />
+        <activity android:name=".ui.activities.ProximosShowsActivity" />
+        <activity android:name=".ui.activities.CompraEntradaActivity" />
+        <activity android:name=".ui.activities.DetalleShowActivity" />
         <activity
             android:name=".ui.activities.MainActivity"
             android:exported="true">

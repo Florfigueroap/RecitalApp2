@@ -1,4 +1,5 @@
 package com.unlam.recitalapp2.ui.activities
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
@@ -30,7 +31,14 @@ class DetalleShowActivity : AppCompatActivity() {
         txtPlace.text = "Lugar: ${item.place}"
 
         btnComprar.setOnClickListener {
-            // Acá hacés lo que quieras después
+            val item = intent.getSerializableExtra("item") as? Item ?: return@setOnClickListener
+            val userId = intent.getLongExtra("USER_ID", -1L)
+
+            val compraIntent = Intent(this, CompraEntradaActivity::class.java)
+            compraIntent.putExtra("USER_ID", userId)
+            compraIntent.putExtra("EVENT_ID", item.id)
+            startActivity(compraIntent)
         }
+
     }
 }

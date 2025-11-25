@@ -3,4 +3,6 @@
     <string name="username">Username</string>
     <string name="password">Password</string>
     <string name="login">Iniciar sesion</string>
+    <string name="artista">Artista</string>
+    <string name="fecha_hora_lugar">Fecha - Hora • Lugar</string>
 </resources>

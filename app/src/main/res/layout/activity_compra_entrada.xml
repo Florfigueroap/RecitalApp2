@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tvCompraTitulo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Artista"
+            android:textSize="20sp"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvCompraInfo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Fecha - Lugar"
+            android:layout_marginTop="4dp"/>
+
+        <TextView
+            android:id="@+id/tvPrecioUnitario"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Precio por entrada: -"
+            android:layout_marginTop="8dp" />
+
+        <!-- Sector -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Sector"
+            android:layout_marginTop="16dp"/>
+
+        <Spinner
+            android:id="@+id/spSector"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- Cantidad -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Cantidad"
+            android:layout_marginTop="16dp"/>
+
+        <EditText
+            android:id="@+id/etCantidad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:inputType="number" />
+
+        <!-- Medio de pago -->
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Medio de pago"
+            android:layout_marginTop="16dp"/>
+
+        <Spinner
+            android:id="@+id/spMetodoPago"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+
+        <!-- info sobre el metodo de pago -->
+        <TextView
+            android:id="@+id/tvInfoMetodoPago"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Seleccioná un medio de pago para ver el recargo"
+            android:layout_marginTop="8dp" />
+
+        <!-- resumen de montos -->
+        <TextView
+            android:id="@+id/tvTotalEstimado"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text=""
+            android:layout_marginTop="8dp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnConfirmarCompra"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Confirmar compra"
+            android:layout_marginTop="24dp"/>
+    </LinearLayout>
+</ScrollView>

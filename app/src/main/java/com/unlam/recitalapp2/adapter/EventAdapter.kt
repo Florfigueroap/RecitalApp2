@@ -1,4 +1,5 @@
 package com.unlam.recitalapp2.adapter
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,7 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.unlam.recitalapp2.R
 import com.unlam.recitalapp2.data.models.Item
-import androidx.cardview.widget.CardView
+import java.time.LocalDate
 
 class EventAdapter(
     private val events: List<Item>,
@@ -21,28 +22,49 @@ class EventAdapter(
         val btnVerMas: Button = itemView.findViewById(R.id.btnBuy)
     }
 
-    // Se llama cuando el RecyclerView necesita un nuevo ViewHolder para representar un elemento.
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): EventViewHolder {
         val view = LayoutInflater.from(parent.context)
             .inflate(R.layout.item_show, parent, false)
         return EventViewHolder(view)
     }
 
-    // Se llama cuando el RecyclerView necesita establecer los datos del elemento en la vista.
     override fun onBindViewHolder(holder: EventViewHolder, position: Int) {
         val item = events[position]
-        // Texto
-        holder.txtArtist.text = item.artist
 
-        // Imagen desde drawable
+        holder.txtArtist.text = item.artist
         holder.imgArtist.setImageResource(item.image)
 
-        // Botón
-        holder.btnVerMas.setOnClickListener {
-            onClick(item)
+        val isPastShow = try {
+            val showDate = LocalDate.parse(item.date)   // "2025-12-29"
+            val today = LocalDate.now()
+            showDate.isBefore(today)
+        } catch (e: Exception) {
+            false
+        }
+
+        val ctx = holder.itemView.context
+
+        if (isPastShow) {
+            holder.btnVerMas.isEnabled = false
+            holder.btnVerMas.text = "Sold out"
+            holder.btnVerMas.alpha = 0.7f
+
+            holder.btnVerMas.setTextColor(ctx.getColor(R.color.white))
+
+            holder.btnVerMas.setOnClickListener(null)
+        } else {
+            holder.btnVerMas.isEnabled = true
+            holder.btnVerMas.text = "Comprar tickets"
+            holder.btnVerMas.alpha = 1f
+
+            holder.btnVerMas.setTextColor(ctx.getColor(R.color.white))
+
+            holder.btnVerMas.setOnClickListener {
+                onClick(item)
+            }
         }
     }
-        // Retorna el tamaño de la lista
-        override fun getItemCount() = events.size
 
+
+    override fun getItemCount() = events.size
 }

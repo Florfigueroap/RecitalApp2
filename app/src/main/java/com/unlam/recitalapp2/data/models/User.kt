@@ -7,5 +7,6 @@ data class User(
     val name: String,
     val surname: String,
     val money: Double,
-    val createdDate: String
+    val createdDate: String,
+    val blocked: Boolean = false
 )
